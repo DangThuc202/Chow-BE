@@ -23,6 +23,12 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+    if (req.method === 'GET' && req.url === '/') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end(' Hello from LinkedIn Auth Backend!');
+    return;
+  }
+
   // Route: Exchange code for access token
   if (req.method === 'POST' && req.url === '/linkedin-login') {
     let body = '';
