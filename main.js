@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const PORT = 1234;
+const PORT = process.env.PORT || 1234;
 
 let storedFbAccessToken = null;
 console.log(storedFbAccessToken);
